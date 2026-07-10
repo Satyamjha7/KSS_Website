@@ -1,0 +1,11 @@
+.impact-section { padding: clamp(75px, 9vw, 120px) 5vw; text-align: center; background: #143d36; }
+.impact-title { margin-bottom: 48px; color: white; }
+.impact-title::before { content: "Measured progress"; display: block; margin-bottom: 12px; color: #f4b860; font-family: "DM Sans", sans-serif; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.impact-title::after { display: none; }
+.impact-container { max-width: 1180px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); border-radius: 22px; background: rgba(255,255,255,.14); }
+.impact-card { min-height: 230px; padding: 38px 25px; display: flex; flex-direction: column; justify-content: center; border-radius: 0; background: #143d36; box-shadow: none; transition: background .25s; }
+.impact-card:hover { background: #1a4a42; transform: none; box-shadow: none; }
+.impact-number { display: block; margin-bottom: 15px; color: #f4b860; font-family: "Manrope", sans-serif; font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 800; letter-spacing: -.05em; }
+.impact-label { margin: 0; color: #c6d7d2; font-size: .9rem; line-height: 1.55; }
+@media (max-width: 850px) { .impact-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .impact-container { grid-template-columns: 1fr; } .impact-card { min-height: 180px; } }

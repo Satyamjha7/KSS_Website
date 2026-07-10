@@ -1,0 +1,17 @@
+.action-container { padding: clamp(72px, 9vw, 130px) 5vw; background: #f7f8f4; }
+.action-content { max-width: 1240px; margin: auto; display: grid; grid-template-columns: 1.03fr .97fr; gap: clamp(45px, 7vw, 100px); align-items: center; }
+.action-image { position: relative; }
+.action-image::before { content: ""; position: absolute; inset: -18px 35% 30% -18px; z-index: 0; border-radius: 28px 0 0; background: #e6efe9; }
+.action-image img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 24px; box-shadow: 0 24px 60px rgba(24,50,46,.16); }
+.action-text { max-width: 570px; }
+.action-heading { margin: 0 0 24px; color: #173b35; font-size: clamp(2.3rem, 4.2vw, 4rem); font-weight: 750; line-height: 1.08; letter-spacing: -.045em; }
+.action-heading::before { content: "Featured initiative"; display: block; margin-bottom: 16px; color: #d85a3b; font-family: "DM Sans", sans-serif; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.action-description { color: #5d706b; font-size: 1.02rem; line-height: 1.75; }
+.donate-button1 { margin-top: 12px; padding: 14px 24px; border: 0; border-radius: 99px; color: white; background: #173b35; font-weight: 750; cursor: pointer; transition: .25s ease; }
+.donate-button1:hover { background: #d85a3b; transform: translateY(-2px); }
+@media (max-width: 800px) {
+  .action-content { grid-template-columns: 1fr; gap: 42px; }
+  .action-image::before { inset: -10px 25% 25% -10px; }
+  .action-text { max-width: none; }
+}
+@media (max-width: 480px) { .action-container { padding-inline: 20px; } .action-description { font-size: .95rem; } }

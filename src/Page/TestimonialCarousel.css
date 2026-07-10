@@ -1,0 +1,13 @@
+.testimonial-section { padding: clamp(75px, 9vw, 120px) 5vw; text-align: center; background: #fffaf3; }
+.testimonial-title { max-width: 700px; margin-inline: auto; }
+.testimonial-title::before { content: "Community voices"; display: block; margin-bottom: 12px; color: #d85a3b; font-family: "DM Sans", sans-serif; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.testimonial-title::after { display: none; }
+.carousel-container { width: auto; max-width: 1180px; margin: 48px auto 0; overflow: visible; padding: 0; background: transparent; }
+.carousel-track { width: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; animation: none; }
+.carousel-slide { min-width: 0; padding: 28px; display: block; border: 1px solid #efdfcf; border-radius: 20px; background: white; text-align: left; }
+.testimonial-image { width: 62px; height: 62px; margin: 0 0 24px; border-radius: 50%; object-fit: cover; }
+.testimonial-content { max-width: none; text-align: left; }
+.quote { min-height: 120px; margin: 0 0 24px; color: #3c5550; font-size: 1rem; font-style: normal; line-height: 1.75; }
+.name { margin: 0 0 3px; color: #173b35; font-size: .95rem; }
+.role { margin: 0; color: #899993; font-size: .8rem; }
+@media (max-width: 800px) { .carousel-track { grid-template-columns: 1fr; } .quote { min-height: 0; } }

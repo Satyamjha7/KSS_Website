@@ -1,0 +1,10 @@
+.partners-carousel-container { padding: clamp(70px, 8vw, 110px) max(6vw, calc((100% - 1180px) / 2)); text-align: center; background: #f2f5f1; }
+.carousel-title::before { content: "Working together"; display: block; margin-bottom: 12px; color: #d85a3b; font-family: "DM Sans", sans-serif; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.carousel-title::after { display: none; }
+.partner-item { min-height: 150px; padding: 20px; display: flex !important; align-items: center; justify-content: center; }
+.partner-item a { width: 90%; min-height: 120px; padding: 22px; display: grid; place-items: center; border: 1px solid #dde6e2; border-radius: 16px; background: white; }
+.partner-logo { width: 145px; height: 75px; object-fit: contain; filter: grayscale(1); opacity: .7; transition: .25s; }
+.partner-item a:hover .partner-logo { filter: grayscale(0); opacity: 1; transform: scale(1.04); }
+.slick-prev, .slick-next { z-index: 2; }
+.slick-prev:before, .slick-next:before { color: #173b35; }
+@media (max-width: 600px) { .partners-carousel-container { padding-inline: 38px; } }

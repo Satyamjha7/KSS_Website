@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-07-10T05:29:46.805Z",
+  "items": [
+    {
+      "id": "fallback-women-collectives",
+      "platform": "facebook",
+      "title": "Women collectives strengthening local leadership",
+      "excerpt": "Community groups continue to build confidence, savings habits, and livelihood pathways across rural settlements.",
+      "publishedAt": "2026-07-01T09:00:00.000Z",
+      "imageUrl": "/images/img1.jpeg",
+      "imageAlt": "Women participating in a community programme",
+      "postUrl": "/stories"
+    },
+    {
+      "id": "fallback-health-camp",
+      "platform": "instagram",
+      "title": "Community health and nutrition awareness",
+      "excerpt": "Field teams are supporting families with preventive health conversations, counselling, and referral linkages.",
+      "publishedAt": "2026-06-24T09:00:00.000Z",
+      "imageUrl": "/images/img2.jpeg",
+      "imageAlt": "Community members gathered for a health awareness session",
+      "postUrl": "/health-nutrition"
+    },
+    {
+      "id": "fallback-learning",
+      "platform": "linkedin",
+      "title": "Learning support for children and youth",
+      "excerpt": "Learning circles and awareness sessions help children stay connected to education and life-skills practice.",
+      "publishedAt": "2026-06-18T09:00:00.000Z",
+      "imageUrl": "/images/img3.jpeg",
+      "imageAlt": "Children and community members at an education programme",
+      "postUrl": "/education-awareness"
+    }
+  ]
+}

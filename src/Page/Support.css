@@ -1,0 +1,120 @@
+
+.support-container {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.support-header {
+    text-align: center;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.support-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.support-header p {
+    font-size: 18px;
+}
+.initiatives-section {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.initiatives-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.initiative-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.initiative-card:hover {
+    transform: scale(1.05);
+}
+
+.bank-details {
+    background: #fff3e0;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.bank-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.bank-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bank-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.bank-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.donation-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background: #ffebee;
+    border-radius: 10px;
+}
+
+.donation-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.donation-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.donate-button {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+.donate-button:hover {
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4);
+}
