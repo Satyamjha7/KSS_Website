@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpenCheck, HeartHandshake, Quote, Sparkles } from "lucide-react";
+import { BookOpenCheck, HeartHandshake, Quote, Sparkles } from "lucide-react";
 import heroImage from "../assets/114.jpeg";
 import imageOne from "../assets/women.jpg";
 import imageTwo from "../assets/178.jpg";
@@ -46,7 +46,7 @@ const Stories = () => (
         <div className="grid gap-6">
           {stories.map((story, index) => (
             <article key={story.title} className={`grid overflow-hidden rounded-[1.75rem] border border-[#dfe8e4] bg-white shadow-[0_20px_60px_rgba(23,59,53,0.08)] lg:grid-cols-2 ${index % 2 ? "lg:[&>img]:order-2" : ""}`}>
-              <img src={story.image} alt="" className="h-full min-h-[340px] w-full object-cover" />
+              <img src={story.image} alt={`Kosi Seva Sadan field story: ${story.title}`} loading="lazy" decoding="async" className="h-full min-h-[340px] w-full object-cover" />
               <div className="flex flex-col justify-center p-7 sm:p-10">
                 <p className="mb-4 w-fit rounded-full bg-[#f4b860]/25 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#b94f36]">{story.tag}</p>
                 <h2 className="font-['Manrope'] text-3xl font-bold leading-tight tracking-[-0.04em] text-[#173b35] sm:text-4xl">{story.title}</h2>

@@ -9,7 +9,6 @@ import {
   Eye,
   FileBarChart,
   FileCheck2,
-  FileText,
   HandCoins,
   Mail,
   PieChart,
@@ -29,6 +28,7 @@ import annualReport2019 from "../assets/ANNUAL REPORT 2019-2020.pdf";
 import annualReport2020 from "../assets/ANNUAL REPORT 2020-2021.pdf";
 import annualReport2021 from "../assets/ANNUAL REPORT 2021-2022.pdf";
 import annualReport2022 from "../assets/Annual Report 2022-2023.pdf";
+import { site } from "../lib/site";
 
 type DocumentStatus = "Available" | "On request";
 
@@ -42,8 +42,6 @@ type FinancialDocument = {
   fileName?: string;
   icon: LucideIcon;
 };
-
-const contactEmail = "info@kosisevasadan.org";
 
 const financialDocuments: FinancialDocument[] = [
   {
@@ -183,7 +181,7 @@ const Financials = () => {
         .join("\n")
     );
 
-    return `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    return `mailto:${site.email}?subject=${subject}&body=${body}`;
   }, [requestedDocument, requesterEmail, requesterName, requestMessage]);
 
   const handleRequestSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -295,6 +293,8 @@ const Financials = () => {
             <img
               src={featureImage}
               alt="Kosi Seva Sadan program documentation and community work"
+              loading="lazy"
+              decoding="async"
               className="h-[420px] w-full object-cover opacity-75 sm:h-[520px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b302a] via-[#0b302a]/35 to-transparent" />
@@ -453,10 +453,10 @@ const Financials = () => {
             <div className="mt-8 rounded-[1.35rem] border border-white/10 bg-white/10 p-5 backdrop-blur-xl">
               <p className="text-sm font-bold text-white">For direct requests:</p>
               <a
-                href={`mailto:${contactEmail}`}
+                href={`mailto:${site.email}`}
                 className="mt-2 inline-flex items-center gap-2 text-sm font-extrabold text-[#f4b860] transition hover:text-white"
               >
-                <Mail size={16} /> {contactEmail}
+                <Mail size={16} /> {site.email}
               </a>
             </div>
           </div>

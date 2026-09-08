@@ -1,5 +1,6 @@
 import { ArrowRight, Home, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { site } from "../lib/site";
 
 const UnderMaintenance = () => {
     return (
@@ -47,11 +48,11 @@ const UnderMaintenance = () => {
                 </div>
 
                 <a
-                    href="mailto:contact@kosisevasadan.org"
+                    href={`mailto:${site.email}`}
                     className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-extrabold text-[#7a8c87] transition hover:text-[#d85a3b]"
                 >
                     <Mail size={15} />
-                    contact@kosisevasadan.org
+                    {site.email}
                 </a>
             </section>
         </main>

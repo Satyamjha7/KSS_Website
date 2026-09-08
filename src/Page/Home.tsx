@@ -13,32 +13,31 @@ import Action from "./Action";
 import PartnersCarousel from "./PartnersCarousel";
 import LatestUpdatesSection from "../features/latestUpdates/LatestUpdatesSection";
 
-const Home = () => {
-  const slides = [
-    {
-      img: "/images/img1.jpeg",
-      eyebrow: "Community-led change since 1981",
-      heading: "Stronger communities.",
-      highlight: "Brighter futures.",
-      description:
-        "We work alongside rural families in Bihar to build resilient livelihoods, expand opportunity, and restore hope.",
-    },
-    {
-      img: "/images/img2.jpeg",
-      eyebrow: "Locally rooted. Lasting impact.",
-      heading: "Together, progress",
-      highlight: "reaches everyone.",
-      description: "From education and healthcare to women-led livelihoods, every initiative begins with the community.",
-    },
-    {
-      img: "/images/img3.jpeg",
-      eyebrow: "Opportunity for every generation",
-      heading: "Turning possibility",
-      highlight: "into lasting change.",
-      description: "Your support helps children, women, and families shape safer, healthier, self-reliant futures.",
-    },
-  ];
+const slides = [
+  {
+    img: "/images/img1.jpeg",
+    eyebrow: "Community-led change since 1981",
+    heading: "Stronger communities.",
+    highlight: "Brighter futures.",
+    description: "We work alongside rural families in Bihar to build resilient livelihoods, expand opportunity, and restore hope.",
+  },
+  {
+    img: "/images/img2.jpeg",
+    eyebrow: "Locally rooted. Lasting impact.",
+    heading: "Together, progress",
+    highlight: "reaches everyone.",
+    description: "From education and healthcare to women-led livelihoods, every initiative begins with the community.",
+  },
+  {
+    img: "/images/img3.jpeg",
+    eyebrow: "Opportunity for every generation",
+    heading: "Turning possibility",
+    highlight: "into lasting change.",
+    description: "Your support helps children, women, and families shape safer, healthier, self-reliant futures.",
+  },
+];
 
+const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -59,26 +58,24 @@ const Home = () => {
   return (
     <div className="home-container">
       <section className="slider-container" aria-label="Kosi Seva Sadan introduction">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`slider ${currentSlide === index ? "current-slide" : ""}`}
-            style={{ backgroundImage: `url(${slide.img})` }}
-          >
-            <div className="overlay" />
-            <div className="slider-content">
-              <p className="hero-eyebrow"><MapPin size={16} /> Bihar, India · {slide.eyebrow}</p>
-              <h1>
-                {slide.heading} <span>{slide.highlight}</span>
-              </h1>
-              <p className="hero-description">{slide.description}</p>
-              <div className="slider-buttons">
-                <Link to="/who-we-are" className="btn learn-more">Discover our work <ArrowRight size={18} /></Link>
-                <Link to="/support" className="btn join-us">Support the mission</Link>
-              </div>
+        <div
+          key={currentSlide}
+          className="slider current-slide"
+          style={{ backgroundImage: `url(${slides[currentSlide].img})` }}
+        >
+          <div className="overlay" />
+          <div className="slider-content">
+            <p className="hero-eyebrow"><MapPin size={16} /> Bihar, India · {slides[currentSlide].eyebrow}</p>
+            <h1>
+              {slides[currentSlide].heading} <span>{slides[currentSlide].highlight}</span>
+            </h1>
+            <p className="hero-description">{slides[currentSlide].description}</p>
+            <div className="slider-buttons">
+              <Link to="/who-we-are" className="btn learn-more">Discover our work <ArrowRight size={18} /></Link>
+              <Link to="/donation-features" className="btn join-us">Support the mission</Link>
             </div>
           </div>
-        ))}
+        </div>
         <div className="hero-controls">
           <div className="slide-dots" aria-label="Choose a slide">
             {slides.map((_, index) => (
@@ -103,7 +100,7 @@ const Home = () => {
         </div>
       </section>
       <LatestUpdatesSection />
-      <Action />
+      <Action headingLevel="h2" />
       <Mission />
       <ImpactSection />
       <DonateButton />

@@ -1,9 +1,8 @@
 import { FormEvent, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Mail, MapPin, MessageCircle, Phone, Send, Sparkles } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send, Sparkles } from "lucide-react";
 import bannerImage from "../assets/178.jpg";
-
-const contactEmail = "info@kosisevasadan.org";
+import { site } from "../lib/site";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,7 +17,7 @@ const Contact = () => {
         .filter(Boolean)
         .join("\n")
     );
-    return `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    return `mailto:${site.email}?subject=${subject}&body=${body}`;
   }, [email, message, name, topic]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -45,9 +44,9 @@ const Contact = () => {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              [Mail, "Email", "kosisevasadan@gmail.com", "info@kosisevasadan.org"],
-              [Phone, "Phone", "+91 9113124943", "+91 9934797023"],
-              [MapPin, "Location", "Acharyavan Mahishi, Saharsa", "Bihar, India"],
+              [Mail, "Email", site.email, "For general enquiries and partnerships"],
+              [Phone, "Phone", site.phone, "For urgent field matters, call directly"],
+              [MapPin, "Location", "Acharyavan, Mahishi, Saharsa", "Bihar, India"],
               [Clock, "Response", "Usually within 2–3 working days", "For urgent field matters, call directly"],
             ].map(([Icon, title, line1, line2]) => {
               const CardIcon = Icon as typeof Mail;
@@ -79,16 +78,20 @@ const Contact = () => {
 
           <form onSubmit={handleSubmit} className="rounded-[1.75rem] border border-[#dfe8e4] bg-white p-6 shadow-[0_24px_70px_rgba(23,59,53,0.1)] sm:p-8">
             <div className="grid gap-5 md:grid-cols-2">
-              <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35]" />
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email address" className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35]" />
-              <select value={topic} onChange={(e) => setTopic(e.target.value)} className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35] md:col-span-2">
+              <label className="sr-only" htmlFor="contact-name">Your name</label>
+              <input id="contact-name" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35]" />
+              <label className="sr-only" htmlFor="contact-email">Email address</label>
+              <input id="contact-email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email address" autoComplete="email" className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35]" />
+              <label className="sr-only" htmlFor="contact-topic">Enquiry topic</label>
+              <select id="contact-topic" name="topic" value={topic} onChange={(e) => setTopic(e.target.value)} className="min-h-12 rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 text-sm font-semibold outline-none focus:border-[#173b35] md:col-span-2">
                 <option>Partnership enquiry</option>
                 <option>Document request</option>
                 <option>Volunteer / career interest</option>
                 <option>Donation support</option>
                 <option>Media request</option>
               </select>
-              <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={7} placeholder="Write your message" className="resize-none rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 py-3 text-sm font-semibold leading-7 outline-none focus:border-[#173b35] md:col-span-2" />
+              <label className="sr-only" htmlFor="contact-message">Your message</label>
+              <textarea id="contact-message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={7} placeholder="Write your message" className="resize-none rounded-2xl border border-[#dce6e1] bg-[#f7f8f4] px-4 py-3 text-sm font-semibold leading-7 outline-none focus:border-[#173b35] md:col-span-2" />
             </div>
             <button type="submit" className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#173b35] px-6 text-sm font-extrabold text-white hover:bg-[#d85a3b]">Open email <Send size={17} /></button>
           </form>

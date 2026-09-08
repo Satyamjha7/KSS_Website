@@ -4,8 +4,7 @@ import { ArrowRight, BriefcaseBusiness, CheckCircle2, HeartHandshake, Mail, MapP
 
 import heroImage from "../assets/133.jpeg";
 import teamImage from "../assets/114.jpeg";
-
-const contactEmail = "info@kosisevasadan.org";
+import { site } from "../lib/site";
 
 const opportunities = [
   {
@@ -57,7 +56,7 @@ const Careers = () => {
         "Thank you.",
       ].filter(Boolean).join("\n")
     );
-    return `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    return `mailto:${site.email}?subject=${subject}&body=${body}`;
   }, [email, message, name, selectedRole]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -86,7 +85,7 @@ const Careers = () => {
           </div>
 
           <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-            <img src={teamImage} alt="" className="h-64 w-full rounded-[1.25rem] object-cover" />
+            <img src={teamImage} alt="Kosi Seva Sadan team members working with rural communities" loading="lazy" decoding="async" className="h-64 w-full rounded-[1.25rem] object-cover" />
             <div className="mt-5 grid gap-3">
               {culture.map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm font-bold text-white/80">
@@ -131,7 +130,7 @@ const Careers = () => {
             <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.15em] text-[#f4b860]">Apply or express interest</p>
             <h2 className="font-['Manrope'] text-4xl font-bold tracking-[-0.045em] sm:text-5xl">Send us your profile.</h2>
             <p className="mt-5 text-base leading-8 text-white/70">This form opens a pre-filled email. Attach your CV before sending.</p>
-            <a href={`mailto:${contactEmail}`} className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#f4b860] hover:text-white"><Mail size={16} /> {contactEmail}</a>
+            <a href={`mailto:${site.email}`} className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#f4b860] hover:text-white"><Mail size={16} /> {site.email}</a>
           </div>
 
           <form onSubmit={handleSubmit} className="rounded-[1.6rem] bg-white p-6 text-[#18322e] shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:p-8">

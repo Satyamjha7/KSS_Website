@@ -146,7 +146,7 @@ const WhoWeAre = () => {
           <h2>Stronger communities are built together.</h2>
         </div>
         <div className="who-cta-actions">
-          <Link to="/support" className="who-button who-button-primary">
+          <Link to="/donation-features" className="who-button who-button-primary">
             Support our mission <ArrowRight size={18} />
           </Link>
           <Link to="/contact" className="who-button who-button-secondary">

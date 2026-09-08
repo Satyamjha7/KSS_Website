@@ -182,7 +182,9 @@ const WorkPageLayout = ({
           <div className="relative overflow-hidden rounded-[1.8rem] bg-[#173b35] shadow-[0_24px_70px_rgba(23,59,53,0.16)]">
             <img
               src={featureImage}
-              alt=""
+              alt={`Kosi Seva Sadan community programme supporting ${themeLabel.toLowerCase()} in Bihar`}
+              loading="lazy"
+              decoding="async"
               className="h-[420px] w-full object-cover opacity-85 transition duration-700 hover:scale-105 sm:h-[520px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b302a] via-[#0b302a]/35 to-transparent" />
@@ -330,7 +332,7 @@ const WorkPageLayout = ({
               Start a conversation <ArrowRight size={18} />
             </Link>
             <Link
-              to="/support"
+              to="/donation-features"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-6 text-sm font-extrabold text-white transition hover:border-white hover:bg-white hover:text-[#173b35]"
             >
               Support this work <HandHeart size={17} />

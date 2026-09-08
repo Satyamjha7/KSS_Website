@@ -27,6 +27,7 @@ import certificate12A from "../assets/12A_KSS.pdf";
 import certificate80G from "../assets/80G_KSS.pdf";
 import fcraCertificate from "../assets/FCRA.pdf";
 import fcraRenewal from "../assets/FCRA Renewal-Certificate.pdf";
+import { site } from "../lib/site";
 
 type DocumentStatus = "Available" | "On request";
 
@@ -39,8 +40,6 @@ type OrganisationDocument = {
   fileName?: string;
   icon: LucideIcon;
 };
-
-const contactEmail = "info@kosisevasadan.org";
 
 const documents: OrganisationDocument[] = [
   {
@@ -145,7 +144,7 @@ const OrganisationDocs = () => {
         .join("\n")
     );
 
-    return `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    return `mailto:${site.email}?subject=${subject}&body=${body}`;
   }, [requestedDocument, requesterEmail, requesterName, requestMessage]);
 
   const handleRequestSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -261,6 +260,8 @@ const OrganisationDocs = () => {
             <img
               src={featureImage}
               alt="Kosi Seva Sadan community documentation"
+              loading="lazy"
+              decoding="async"
               className="h-[420px] w-full object-cover opacity-75 sm:h-[520px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b302a] via-[#0b302a]/35 to-transparent" />
@@ -381,10 +382,10 @@ const OrganisationDocs = () => {
             <div className="mt-8 rounded-[1.35rem] border border-white/10 bg-white/10 p-5 backdrop-blur-xl">
               <p className="text-sm font-bold text-white">For direct requests:</p>
               <a
-                href={`mailto:${contactEmail}`}
+                href={`mailto:${site.email}`}
                 className="mt-2 inline-flex items-center gap-2 text-sm font-extrabold text-[#f4b860] transition hover:text-white"
               >
-                <Mail size={16} /> {contactEmail}
+                <Mail size={16} /> {site.email}
               </a>
             </div>
           </div>

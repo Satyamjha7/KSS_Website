@@ -92,6 +92,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .navbar {
   position: fixed;
   inset: 0 0 auto;
+  top: var(--site-announcement-height, 0px);
   z-index: 1000;
   height: 92px;
   padding: 0 clamp(18px, 3.2vw, 56px);
@@ -347,7 +348,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .nav-actions { display: none; }
   .nav-links {
     position: fixed;
-    top: 72px;
+    top: calc(var(--site-announcement-height, 0px) + 72px);
     right: -100%;
     bottom: 0;
     width: min(430px, 100%);
@@ -399,7 +400,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
     letter-spacing: .02em;
   }
   .hamburger { width: 40px; height: 40px; }
-  .nav-links { top: 68px; width: 100%; }
+  .nav-links { top: calc(var(--site-announcement-height, 0px) + 68px); width: 100%; }
   .nav-links a, .mouse-event { min-height: 52px; font-size: .95rem; }
 }
 

@@ -207,6 +207,8 @@ const WomenEmpowerment = () => {
             <img
               src={womenImage}
               alt="Women participating in community empowerment initiatives"
+              loading="lazy"
+              decoding="async"
               className="h-[420px] w-full object-cover opacity-85 sm:h-[520px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b302a] via-[#0b302a]/35 to-transparent" />
@@ -375,7 +377,7 @@ const WomenEmpowerment = () => {
               Work with us <ArrowRight size={18} />
             </Link>
             <Link
-              to="/donate-button"
+              to="/donation-features"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-6 text-sm font-extrabold text-white transition hover:border-white hover:bg-white hover:text-[#173b35]"
             >
               Donate <HandHeart size={17} />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { site } from "../lib/site";
 
 const Footer = () => {
   return (
@@ -27,18 +28,13 @@ const Footer = () => {
             Working alongside communities in Bihar since 1981 to advance equity,
             resilient livelihoods, and sustainable development.
           </p>
-          <div className="footer-socials" aria-label="Social media">
-            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
-          </div>
         </div>
 
         <div className="footer-nav-group">
           <h3>Explore</h3>
           <Link to="/who-we-are">About us</Link>
           <Link to="/team">Our team</Link>
-          <Link to="/latest-news">News & stories</Link>
+          <Link to="/updates">News & stories</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
@@ -52,9 +48,9 @@ const Footer = () => {
 
         <div className="footer-contact-group">
           <h3>Connect</h3>
-          <a href="mailto:contact@kosisevasadan.org"><Mail size={17} /> kosisevasadan@gmail.com</a>
-          <a href="tel:+919876543210"><Phone size={17} /> +91 9113124943</a>
-          <span><MapPin size={17} /> Bihar, India</span>
+          <a href={`mailto:${site.email}`}><Mail size={17} /> {site.email}</a>
+          <a href={`tel:${site.phoneHref}`}><Phone size={17} /> {site.phone}</a>
+          <span><MapPin size={17} /> Saharsa, Bihar, India</span>
         </div>
       </div>
 

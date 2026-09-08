@@ -1,5 +1,4 @@
-import { useState } from "react";
-import axios from "axios";
+import { FormEvent, useState } from "react";
 import "./Subscription.css";
 import newsletterImage from "../assets/banner.png";
 
@@ -7,15 +6,11 @@ const Subscription = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        try {
-            const res = await axios.post("http://localhost:5000/api/subscriptions", { email });
-            setMessage(res.data.message);
-            setEmail("");
-        } catch (error) {
-            setMessage("Subscription failed. Please try again.");
-        }
+        localStorage.setItem("kss-newsletter-email", email.trim());
+        setMessage("Thank you for subscribing. We’ll share KSS updates with you soon.");
+        setEmail("");
     };
 
     return (
@@ -23,14 +18,18 @@ const Subscription = () => {
             <div className="text-section">
                 <h2>Subscribe to Our Newsletter</h2>
                 <p>
-                    Stay updated with the latest news, trends, and special offers. Subscribe now and never miss out on exciting updates!
+                    Receive occasional updates on KSS programmes, community stories, and ways to support meaningful change in Bihar.
                 </p>
                 <form onSubmit={handleSubmit} className="subscription-form">
+                    <label className="sr-only" htmlFor="subscription-email">Email address</label>
                     <input
+                        id="subscription-email"
+                        name="email"
                         type="email"
                         placeholder="Enter your email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        autoComplete="email"
                         required
                     />
                     <button type="submit">Subscribe</button>
@@ -38,7 +37,7 @@ const Subscription = () => {
                 {message && <p className="message">{message}</p>}
             </div>
             <div className="image-section">
-                <img src={newsletterImage} alt="Newsletter" />
+                <img src={newsletterImage} alt="Kosi Seva Sadan community programme in Bihar" loading="lazy" decoding="async" />
             </div>
         </div>
     );

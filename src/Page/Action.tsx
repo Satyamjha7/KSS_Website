@@ -1,7 +1,13 @@
 import React from 'react';
 import './Action.css';
 
-const Action = () => {
+type ActionProps = {
+    headingLevel?: "h1" | "h2";
+};
+
+const Action = ({ headingLevel = "h1" }: ActionProps) => {
+    const Heading = headingLevel;
+
     return (
         <div className="action-container">
             <div className="action-content">
@@ -9,7 +15,7 @@ const Action = () => {
                     <img src="/images/Flood.jpg" alt="Flood Relief Work" />
                 </div>
                 <div className="action-text">
-                    <h1 className="action-heading">Surviving the Flood</h1>
+                    <Heading className="action-heading">Surviving the Flood</Heading>
                     <p className="action-description">
                         In the flood-prone district of Saharsa, Bihar, life revolves around water. While farmers in other regions struggle with water scarcity, the people of Saharsa have learned to live with excess water, adapting their farming methods and livelihoods to survive the annual floods.
 

@@ -95,6 +95,7 @@ type LatestUpdatesSectionProps = {
 const LatestUpdatesSection = ({ limit = 6, showViewAll = true, pageMode = false }: LatestUpdatesSectionProps) => {
   const { updates, loading } = useLatestUpdates(limit);
   const hasUpdates = updates.length > 0;
+  const Heading = pageMode ? "h1" : "h2";
 
   return (
     <section className={`bg-[#f7f8f4] px-4 py-16 sm:px-6 lg:px-8 ${pageMode ? "pt-32 lg:pt-40" : ""}`}>
@@ -104,9 +105,9 @@ const LatestUpdatesSection = ({ limit = 6, showViewAll = true, pageMode = false 
             <span className="text-xs font-black uppercase tracking-[0.22em] text-[#d85a3b]">
               Latest Updates
             </span>
-            <h2 className="mt-3 max-w-2xl font-['Manrope'] text-4xl font-black leading-[1.05] tracking-[-0.05em] text-[#173b35] sm:text-5xl">
+            <Heading className="mt-3 max-w-2xl font-['Manrope'] text-4xl font-black leading-[1.05] tracking-[-0.05em] text-[#173b35] sm:text-5xl">
               News from our official social channels.
-            </h2>
+            </Heading>
             <p className="mt-4 max-w-2xl text-base leading-8 text-[#657a74]">
               Recent posts from KSS programmes, field updates, campaigns, and community stories.
             </p>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpenCheck, CalendarDays, Download, Eye, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpenCheck, CalendarDays, Download, Eye, Sparkles } from "lucide-react";
 
 import heroImage from "../assets/182.jpg";
 import report2017Thumb from "../assets/ANNUAL REPORT 2017-2018-thumbnail.jpg";

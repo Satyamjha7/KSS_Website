@@ -70,7 +70,7 @@ const Gallery = () => {
                 onClick={() => setSelectedIndex(index)}
                 className="group mb-5 block w-full overflow-hidden rounded-[1.35rem] bg-white shadow-[0_16px_45px_rgba(23,59,53,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(23,59,53,0.14)]"
               >
-                <img src={image} alt={`KSS field gallery ${index + 1}`} className="w-full object-cover transition duration-700 group-hover:scale-105" />
+                <img src={image} alt={`Kosi Seva Sadan community programme photo ${index + 1}`} loading="lazy" decoding="async" className="w-full object-cover transition duration-700 group-hover:scale-105" />
               </button>
             ))}
           </div>
@@ -88,9 +88,9 @@ const Gallery = () => {
       {selectedIndex !== null && (
         <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-[#051f1b]/95 p-5">
           <button className="absolute right-5 top-5 rounded-full bg-white p-3 text-[#173b35]" onClick={() => setSelectedIndex(null)} aria-label="Close gallery image"><X /></button>
-          <button className="absolute left-5 rounded-full bg-white/10 px-4 py-3 text-3xl text-white" onClick={() => setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length)}>‹</button>
+          <button aria-label="Previous gallery image" className="absolute left-5 rounded-full bg-white/10 px-4 py-3 text-3xl text-white" onClick={() => setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length)}>‹</button>
           <img src={galleryImages[selectedIndex]} alt="Selected KSS gallery item" className="max-h-[86vh] max-w-[88vw] rounded-[1.25rem] object-contain shadow-2xl" />
-          <button className="absolute right-5 rounded-full bg-white/10 px-4 py-3 text-3xl text-white" onClick={() => setSelectedIndex((selectedIndex + 1) % galleryImages.length)}>›</button>
+          <button aria-label="Next gallery image" className="absolute right-5 rounded-full bg-white/10 px-4 py-3 text-3xl text-white" onClick={() => setSelectedIndex((selectedIndex + 1) % galleryImages.length)}>›</button>
         </div>
       )}
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, FileText, Newspaper, Send } from "lucide-react";
+import { FileText, Newspaper, Send } from "lucide-react";
 import heroImage from "../assets/gallery.jpg";
 
 const clips = [
