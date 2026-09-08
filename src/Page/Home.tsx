@@ -8,7 +8,7 @@ import Subscription from './Subscription';
 import LatestNews from './LatestNews';
 import TestimonialCarousel from "./TestimonialCarousel";
 import StorytellingVideos from "./StoryTellingVideos";
-import DonateButton from "../Components/DonateButton";
+import DonateButton from "../components/DonateButton";
 import Action from "./Action";
 import PartnersCarousel from "./PartnersCarousel";
 import LatestUpdatesSection from "../features/latestUpdates/LatestUpdatesSection";
